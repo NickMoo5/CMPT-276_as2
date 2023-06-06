@@ -36,5 +36,4 @@ clearButton.addEventListener("click", function() {
     formInputs.forEach(function(formInputs) {
         formInputs.value = ""
     })
-    
 })
