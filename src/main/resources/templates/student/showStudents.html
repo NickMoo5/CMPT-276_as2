@@ -1,60 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.com">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <title>FORM</title>
     </head>
 
-<body> 
+<body class="container-fluid"> 
     <h1> MOO</h1>
-    <form action="/student/add" method="post">
-        <div class="formInputsCont" id="formInputsCont">
-            <div class="inputCont">
-                <label for="nameTextBox">Name</label>
-                <input type="text" id="nameTextBox" name="nameTextBox">
-                <p2 id="nameError">Enter Name</p2>    
+    <div class="row p-3">
+        <div class="col-md-4 m-sm-4" id="formInputsCont" style="width: 350px;     padding: 25px;
+        background-color: #d4d2d7;
+        border-radius: 5px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
+        <form action="/student/view" method="post" class="needs-validation" novalidate>
+                <div class="container p-1">
+                    <label for="nameTextBox">Name</label>
+                    <input class="form-control" type="text" id="nameTextBox" name="nameTextBox" required placeholder="Name">
+                    <div class="invalid-feedback">Please enter a name</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="heightTextBox">Height (cm)</label>
+                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" required placeholder="Height">
+                    <div class="invalid-feedback">Please enter a height</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="weightTextBox">Weight (kg)</label>
+                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0" required placeholder="Weight">
+                    <div class="invalid-feedback">Please enter a weight</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="hairTextBox">Hair Colour</label>
+                    <input class="form-control" type="text" id="hairTextBox" name="hairTextBox" required placeholder="Hair Colour">
+                    <div class="invalid-feedback">Please enter a hair colour</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="gpaTextBox">GPA</label>
+                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" step="0.01" required placeholder="GPA">
+                    <div class="invalid-feedback">Must above 0 and up to 2 decimal places</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="favProf">Favourite Professor</label>
+                    <select class="form-select" id="favProf" name="favProf" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Bobby Chan</option>
+                        <option>Bobby Chan</option>
+                        <option>Bobby Chan</option>
+                        <option>Bobby Chan</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a professor
+                      </div>
+                </div>
+                <div class="container-fluid">
+                <div class="row justify-content-center p-2">
+                    <div class="col-4 p-1">
+                    <button class="btn btn-secondary" id="clearButton" type="reset">Clear All</button></div>
+                    <div class="col-6 p-1">
+                    <button class="btn btn-primary" id="AddButton" type="submit">Add Student</button></div>
+                </div>
             </div>
-            <div class="inputCont">
-                <label for="heightTextBox">Height</label>
-                <input type="text" id="heightTextBox" name="heightTextBox">
-                <p2 id="heightError">Enter Height</p2>    
-            </div>
-            <div class="inputCont">
-                <label for="weightTextBox">Weight</label>
-                <input type="text" id="weightTextBox" name="weightTextBox">
-                <p2 id="weightError">Enter Weight</p2>    
-            </div>
-            <div class="inputCont">
-                <label for="hairTextBox">Hair Colour</label>
-                <select name="myCombo" id="myCombo">
-                    <option value="option1">Black</option>
-                    <option value="option2">Brown</option>
-                    <option value="option3">Blonde</option>
-                    <option value="option4">White</option>
-                </select>
-                <p2 id="hairError">Enter Hair Colour</p2>    
-            </div>
-            <div class="inputCont">
-                <label for="gpaTextBox">GPA</label>
-                <input type="text" id="gpaTextBox" name="gpaTextBox">
-                <p2 id="gpaError">Enter GPA</p2>    
-            </div>
-            <div>
-                <button id="clearButton">Clear All</button>
-                <button id="AddButton" type="submit">Add Student</button>
+            
+        </form>
+        </div>
+        <div class="col-md-8 m-sm-4 p-4 overflow-auto" style="        background-color: #d4d2d7;
+                                    border-radius: 5px;
+                                    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                                    height: 550px;">
+            <div class="container text-center">
+                <div class="row align-items-center m-sm-2 p-2">
+                    <div class="col-3">
+                        <h3>Block</h3>
+                    </div>
+                    <div class="col-2">
+                        <h3>Name</h3>
+                    </div>
+                    <div class="col-1">
+                        <h3>GPA</h3>
+                    </div>
+                    <div class="col-2">
+                        <h3>Favourite Professor</h3>
+                    </div>
+                    <div class="col-2">
+                        <h3>Edit</h3>
+                    </div>
+                    <div class="col-2">
+                        <h3>Delete</h3>
+                    </div>
+                </div>
+            
+                <div class="row align-items-center m-sm-2 p-2" th:each="student:${students}" style="background-color: #FFFFFF;
+                                                                                                border-radius: 5px;"> 
+                        <div class="col-3 d-flex justify-content-center">
+                            <div th:style="'width: ' + ${student.weight} + 'px; height: ' + ${student.height} + 'px; background-color: ' + ${student.hair} + '; border-radius: 3px;'"></div>
+                        </div>
+                        <div class="col-2">
+                        <span th:text="${student.name}"></span> 
+                        </div>
+                        <div class="col-1">
+                        <span th:text="${student.gpa}"></span> 
+                        </div>
+                        <div class="col-2">
+                            <span th:text="${student.favProf}"></span> 
+                        </div>
+                        <div class="col-sm-2">
+                            <form action="/student/edit" method="post">
+                                <input type="hidden" th:value="${student.uid}" name="studentId">
+                                <button class="btn btn-primary" id="delete" type="submit">Edit</button>
+                            </form>
+                            </div>
+                        <div class="col-sm-2">
+                        <form action="/student/del" method="post">
+                            <input type="hidden" th:value="${student.uid}" name="studentId">
+                            <button class="btn btn-danger" id="delete" type="submit">Delete</button>
+                        </form>
+                        </div>
+
+
+                </div>
             </div>
         </div>
-    </form>
-    <ul>
-        <li th:each="student:${students}"> 
-            <span th:text="${student.name}"></span> <br>
-            <span th:text="${student.height}"></span> <br>
-            <span th:text="${student.weight}"></span> <br>
-            <span th:text="${student.hair}"></span> <br>
-        </li>
-    </ul>
+        
+    </div>
+    <script>
+                (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>
 </body>
 
 </html>

@@ -1,16 +1,31 @@
 package cmpt276.studentdb.studentdb.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="students")
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int uid;
     private String name;
     private int height;
     private int weight;
     private String hair;
+    private float gpa;
+    private String favProf;
 
-    public Student(String name, int height, int weight, String hair) {
+    public Student() {
+        
+    }
+
+    public Student(String name, int height, int weight, String hair, float gpa, String prof) {
         this.name = name;
         this.height = height;
         this.weight = weight;
         this.hair = hair;
+        this.gpa = gpa;
+        this.favProf = prof;
     }
 
     public String getName() {
@@ -45,5 +60,27 @@ public class Student {
         this.hair = hair;
     }
 
+    public int getUid() {
+        return uid;
+    }
 
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
+    public float getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(float gpa) {
+        this.gpa = gpa;
+    }
+
+    public String getFavProf() {
+        return favProf;
+    }
+
+    public void setFavProf(String favProf) {
+        this.favProf = favProf;
+    }
 }
