@@ -114,7 +114,7 @@ public class Student {
         this.favIde = favIde;
     }
 
-    public String getImgIdePath() {jpg
+    public String getImgIdePath() {
         return imgIdePath;
     }
 
