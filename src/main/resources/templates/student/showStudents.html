@@ -23,12 +23,12 @@
                 </div>
                 <div class="container p-1">
                     <label for="heightTextBox">Height (cm)</label>
-                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" required placeholder="Height">
+                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" max="400" required placeholder="0 - 400">
                     <div class="invalid-feedback">Please enter a height</div>    
                 </div>
                 <div class="container p-1">
                     <label for="weightTextBox">Weight (kg)</label>
-                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0" required placeholder="Weight">
+                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0" max="400" required placeholder="0 - 400">
                     <div class="invalid-feedback">Please enter a weight</div>    
                 </div>
                 <div class="container p-1">
@@ -38,16 +38,16 @@
                 </div>
                 <div class="container p-1">
                     <label for="gpaTextBox">GPA</label>
-                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" step="0.01" required placeholder="GPA">
-                    <div class="invalid-feedback">Must above 0 and up to 2 decimal places</div>    
+                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" max="4.33" step="0.01" required placeholder="0.00 - 4.33">
+                    <div class="invalid-feedback">Please enter a GPA</div>    
                 </div>
                 <div class="container p-1">
                     <label for="favProf">Favourite Professor</label>
                     <select class="form-select" id="favProf" name="favProf" required>
                         <option selected disabled value="">Choose...</option>
                         <option>Bobby Chan</option>
-                        <option>Bobby Chan</option>
-                        <option>Bobby Chan</option>
+                        <option>ChatGPT</option>
+                        <option>Stack Overflow</option>
                         <option>Bobby Chan</option>
                       </select>
                       <div class="invalid-feedback">
@@ -87,7 +87,7 @@
                         <h3>Edit</h3>
                     </div>
                     <div class="col-2">
-                        <h3>Delete</h3>
+                        <h3></h3>
                     </div>
                 </div>
             
@@ -105,13 +105,16 @@
                         <div class="col-2">
                             <span th:text="${student.favProf}"></span> 
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-2">
+                            <span>VS Code</span> 
+                        </div>
+                        <div class="col-sm-1">
                             <form action="/student/edit" method="post">
                                 <input type="hidden" th:value="${student.uid}" name="studentId">
                                 <button class="btn btn-primary" id="delete" type="submit">Edit</button>
                             </form>
                             </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-1">
                         <form action="/student/del" method="post">
                             <input type="hidden" th:value="${student.uid}" name="studentId">
                             <button class="btn btn-danger" id="delete" type="submit">Delete</button>
