@@ -9,82 +9,80 @@
 </head>
 <body>
     <div class="container-fluid d-flex justify-content-center">
-                <div class="col-md-4 m-sm-4" id="formInputsCont" style="width: 350px;     padding: 25px;
-                    background-color: #d4d2d7;
-                    border-radius: 5px;
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
-                    <h1 class="d-flex justify-content-center">Edit Student</h1>
-                    <form action="/student/editStudent" method="post" class="needs-validation" novalidate>
-                        <div class="container p-1">
-                            <label for="nameTextBox">Name</label>
-                            <input class="form-control" type="text" id="nameTextBox" name="nameTextBox" required placeholder="Name" th:value="${edit.name}">
-                            <div class="invalid-feedback">Please enter a name</div>    
-                        </div>
-                        <div class="container p-1">
-                            <label for="heightTextBox">Height (cm)</label>
-                            <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" max="400" required placeholder="0 - 400" th:value="${edit.height}">
-                            <div class="invalid-feedback">Please enter a height</div>    
-                        </div>
-                        <div class="container p-1">
-                            <label for="weightTextBox">Weight (kg)</label>
-                            <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0"  max="400" required placeholder="0 - 400" th:value="${edit.weight}">
-                            <div class="invalid-feedback">Please enter a weight</div>    
-                        </div>
-                        <div class="container p-1">
-                            <label for="hairTextBox">Hair Colour</label>
-                            <input class="form-control" type="text" id="hairTextBox" name="hairTextBox" required placeholder="Hair Colour" th:value="${edit.hair}">
-                            <div class="invalid-feedback">Please enter a hair colour</div>    
-                        </div>
-                        <div class="container p-1">
-                            <label for="gpaTextBox">GPA</label>
-                            <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" max="4.33" step="0.01" required placeholder="0.00 - 4.33" th:value="${edit.gpa}">
-                            <div class="invalid-feedback">Please enter a GPA</div>    
-                        </div>
-                        <div class="container p-1">
-                            <label for="favProf">Favourite Professor</label>
-                            <select class="form-select" id="favProf" name="favProf" required th:value="${edit.favProf}">
-                                <option>VS Code</option>
-                                <option>Notepad</option>
-                                <option>Microsoft Word</option>
-                                <option>Intellij</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a professor
-                            </div>
-                        </div>
-                        <div class="container p-1">
-                            <label for="favIde">Favourite Java IDE</label>
-                            <select class="form-select" id="favIde" name="favIde" required th:value="${edit.favIde}">
-                                <option>VS Code</option>
-                                <option>Notepad</option>
-                                <option>Microsoft Word</option>
-                                <option>Intellij</option>
-                              </select>
-                              <div class="invalid-feedback">
-                                Please select an IDE
-                              </div>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="row justify-content-center p-2">
-                                <div class="col p-2 d-flex justify-content-end">
-                                <button class="btn btn-secondary" type="reset">Clear All</button></div>
-                                <div class="col p-2">
-                                <button class="btn btn-primary" type="submit">Save</button></div>
-                            </div>
-                        </div>
-                    
-                    </form>
+        <div class="col-md-4 m-sm-4" id="formInputsCont" style="width: 350px;     
+                                                                padding: 25px;
+                                                                background-color: #d4d2d7;
+                                                                border-radius: 5px;
+                                                                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
+            <h1 class="d-flex justify-content-center">Edit Student</h1>
+            <form action="/student/editStudent" method="post" class="needs-validation" novalidate>
+                <div class="container p-1">
+                    <label for="nameTextBox">Name</label>
+                    <input class="form-control" type="text" id="nameTextBox" name="nameTextBox" required placeholder="Name" th:value="${edit.name}">
+                    <div class="invalid-feedback">Please enter a name</div>    
                 </div>
+                <div class="container p-1">
+                    <label for="heightTextBox">Height (cm)</label>
+                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" max="400" step="any" required placeholder="0 - 400" th:value="${edit.height}">
+                    <div class="invalid-feedback">Please enter a valid height</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="weightTextBox">Weight (kg)</label>
+                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0"  max="400" step="any" required placeholder="0 - 400" th:value="${edit.weight}">
+                    <div class="invalid-feedback">Please enter a valid weight</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="hairTextBox">Hair Colour</label>
+                    <input class="form-control" type="text" id="hairTextBox" name="hairTextBox" required placeholder="Hair Colour" th:value="${edit.hair}">
+                    <div class="invalid-feedback">Please enter a hair colour</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="gpaTextBox">GPA</label>
+                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" max="4.33" step="any" required placeholder="0.00 - 4.33" th:value="${edit.gpa}">
+                    <div class="invalid-feedback">Please enter a valid GPA</div>    
+                </div>
+                <div class="container p-1">
+                    <label for="favProf">Favourite Professor</label>
+                    <select class="form-select" id="favProf" name="favProf" required th:value="${edit.favProf}">
+                        <option th:selected="${edit.favProf=='Bobby Chan'}">Bobby Chan</option>
+                        <option th:selected="${edit.favProf=='ChatGPT'}">ChatGPT</option>
+                        <option th:selected="${edit.favProf=='Stack Overflow'}">Stack Overflow</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a professor
+                    </div>
+                </div>
+                <div class="container p-1">
+                    <label for="favIde">Favourite Java IDE</label>
+                    <select class="form-select" id="favIde" name="favIde" required >
+                        <option th:selected="${edit.favIde=='Notepad'}">Notepad</option>
+                        <option th:selected="${edit.favIde=='VS Code'}">VS Code</option>
+                        <option th:selected="${edit.favIde=='Microsoft Word'}">Microsoft Word</option>
+                        <option th:selected="${edit.favIde=='Intellij'}">Intellij</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select an IDE
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row justify-content-center p-2">
+                        <div class="col p-2 d-flex justify-content-end">
+                        <button class="btn btn-secondary" type="reset">Clear All</button></div>
+                        <div class="col p-2">
+                        <button class="btn btn-primary" type="submit">Save</button></div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <script>
                 (() => {
         'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        // Fetch forms to apply  Bootstrap validation 
         const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
+        // Loop over and prevent submission
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
             if (!form.checkValidity()) {

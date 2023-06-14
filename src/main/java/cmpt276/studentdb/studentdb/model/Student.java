@@ -19,21 +19,14 @@ public class Student {
     private String favIde;
     private String imgIdePath;
 
-    public static final Map<String, String> IDE_STR_TO_IMG_PATH = Map.of(
+    public static final Map<String, String> IDE_STR_TO_IMG_PATH = Map.of(       // maps IDE string for UI to img resource
             "VS Code", "vscode.png",
             "Notepad", "notepad.jpg",
             "Intellij", "intellij.jpg",
             "Microsoft Word", "word.png"
     );
-
-    public static final Map<String, String> IMG_PATH_TO_IDE_STR = Map.of(
-            "vscode.png", "VS Code",
-            "notepad.jpg", "Notepad",
-            "intellij.jpg", "Intellij",
-            "word.png", "Microsoft Word"
-    );
     
-    public static final String IMG_PATH = "/images/";
+    public static final String IMG_PATH = "/images/";           // Path to images resource
 
     public Student() {
         

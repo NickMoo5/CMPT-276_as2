@@ -10,13 +10,13 @@
 
 <body class="container-fluid"> 
     <div class="row p-2">
-        <div class="col-md-4 m-sm-2" id="formInputsCont" style="width: 300px;     padding: 25px;
-        background-color: #d4d2d7;
-        border-radius: 5px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
-        <form action="/student/view" method="post" class="needs-validation" novalidate>
-            <h1 class="d-flex justify-content-center">Add Student</h1>
-
+        <div class="col-md-4 m-sm-2" id="formInputsCont" style="width: 300px;     
+                                                                padding: 25px;
+                                                                background-color: #d4d2d7;
+                                                                border-radius: 5px;
+                                                                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
+            <form action="/student/view" method="post" class="needs-validation" novalidate>
+                <h1 class="d-flex justify-content-center">Add Student</h1>
                 <div class="container p-1">
                     <label for="nameTextBox">Name</label>
                     <input class="form-control" type="text" id="nameTextBox" name="nameTextBox" required placeholder="Name">
@@ -24,13 +24,13 @@
                 </div>
                 <div class="container p-1">
                     <label for="heightTextBox">Height (cm)</label>
-                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" max="400" required placeholder="0 - 400">
-                    <div class="invalid-feedback">Please enter a height</div>    
+                    <input class="form-control" type="number" id="heightTextBox" name="heightTextBox" min="0" max="400" step="any" required placeholder="0 - 400">
+                    <div class="invalid-feedback">Please enter a valid height</div>    
                 </div>
                 <div class="container p-1">
                     <label for="weightTextBox">Weight (kg)</label>
-                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0" max="400" required placeholder="0 - 400">
-                    <div class="invalid-feedback">Please enter a weight</div>    
+                    <input class="form-control" type="number" id="weightTextBox" name="weightTextBox" min="0" max="400" step="any" required placeholder="0 - 400">
+                    <div class="invalid-feedback">Please enter a valid weight</div>    
                 </div>
                 <div class="container p-1">
                     <label for="hairTextBox">Hair Colour</label>
@@ -39,20 +39,20 @@
                 </div>
                 <div class="container p-1">
                     <label for="gpaTextBox">GPA</label>
-                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" max="4.33" step="0.01" required placeholder="0.00 - 4.33">
-                    <div class="invalid-feedback">Please enter a GPA</div>    
+                    <input class="form-control" type="number" id="gpaTextBox" name="gpaTextBox" min="0" max="4.33" step="any" required placeholder="0.00 - 4.33">
+                    <div class="invalid-feedback">Please enter a valid GPA</div>    
                 </div>
                 <div class="container p-1">
                     <label for="favProf">Favourite Professor</label>
                     <select class="form-select" id="favProf" name="favProf" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option>Bobby Chan</option>
-                        <option>ChatGPT</option>
-                        <option>Stack Overflow</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select a professor
-                      </div>
+                    <option selected disabled value="">Choose...</option>
+                    <option>Bobby Chan</option>
+                    <option>ChatGPT</option>
+                    <option>Stack Overflow</option>
+                    </select>
+                    <div class="invalid-feedback">
+                    Please select a professor
+                    </div>
                 </div>
                 <div class="container p-1">
                     <label for="favIde">Favourite Java IDE</label>
@@ -62,29 +62,29 @@
                         <option>Notepad</option>
                         <option>Microsoft Word</option>
                         <option>Intellij</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Please select an IDE
-                      </div>
+                    </select>
+                    <div class="invalid-feedback">
+                    Please select an IDE
+                    </div>
                 </div>
                 <div class="container-fluid">
-                <div class="row justify-content-center p-2">
-                    <div class="col-4 p-1">
-                    <button class="btn btn-secondary" id="clearButton" type="reset">Clear All</button></div>
-                    <div class="col-6 p-1">
-                    <button class="btn btn-primary" id="AddButton" type="submit">Add Student</button></div>
-                </div>
-            </div>
-            
-        </form>
+                    <div class="row justify-content-center p-2">
+                        <div class="col-4 p-1">
+                            <button class="btn btn-secondary" id="clearButton" type="reset">Clear All</button>
+                        </div>
+                        <div class="col-6 p-1">
+                        <button class="btn btn-primary" id="AddButton" type="submit">Add Student</button>
+                        </div>
+                    </div>
+                </div>    
+            </form>
         </div>
 
-
-        <div class="col-8 m-sm-2 p-4 overflow-auto" style="        background-color: #d4d2d7;
-                                    border-radius: 5px;
-                                    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-                                    height: 680px;
-                                    width: 1030px;">
+        <div class="col-8 m-sm-2 p-4 overflow-auto" style=" background-color: #d4d2d7;
+                                                            border-radius: 5px;
+                                                            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                                                            height: 680px;
+                                                            width: 1030px;">
             <div class="container-fluid text-center">
                 <div class="row align-items-center m-sm-2 p-2">
                     <div class="col-3">
@@ -109,35 +109,33 @@
             
                 <div class="row align-items-center m-sm-2 p-2" th:each="student:${students}" style="background-color: #FFFFFF;
                                                                                                 border-radius: 5px;"> 
-                        <div class="col-3 d-flex justify-content-center">
-                            <div th:style="'width: ' + ${student.weight} + 'px; height: ' + ${student.height} + 'px; background-color: ' + ${student.hair} + '; border-radius: 3px;'"></div>
-                        </div>
-                        <div class="col-2">
+                    <div class="col-3 d-flex justify-content-center">
+                        <div th:style="'width: ' + ${student.weight} + 'px; height: ' + ${student.height} + 'px; background-color: ' + ${student.hair} + '; border-radius: 3px;'"></div>
+                    </div>
+                    <div class="col-2">
                         <span th:text="${student.name}"></span> 
-                        </div>
-                        <div class="col-1">
+                    </div>
+                    <div class="col-1">
                         <span th:text="${student.gpa}"></span> 
-                        </div>
-                        <div class="col-2">
-                            <span th:text="${student.favProf}"></span> 
-                        </div>
-                        <div class="col-2">
-                            <img th:src="@{${student.imgIdePath}}" width="50" height="50"> 
-                        </div>
-                        <div class="col-sm-1">
-                            <form action="/student/edit" method="post">
-                                <input type="hidden" th:value="${student.uid}" name="studentId">
-                                <button class="btn btn-primary" id="delete" type="submit">Edit</button>
-                            </form>
-                            </div>
-                        <div class="col-sm-1 p-1">
+                    </div>
+                    <div class="col-2">
+                        <span th:text="${student.favProf}"></span> 
+                    </div>
+                    <div class="col-2">
+                        <img th:src="@{${student.imgIdePath}}" width="50" height="50"> 
+                    </div>
+                    <div class="col-sm-1">
+                        <form action="/student/edit" method="post">
+                            <input type="hidden" th:value="${student.uid}" name="studentId">
+                            <button class="btn btn-primary" id="delete" type="submit">Edit</button>
+                        </form>
+                    </div>
+                    <div class="col-sm-1 p-1">
                         <form action="/student/del" method="post">
                             <input type="hidden" th:value="${student.uid}" name="studentId">
                             <button class="btn btn-danger" id="delete" type="submit">Delete</button>
                         </form>
-                        </div>
-
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,10 +145,10 @@
                 (() => {
         'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        // Fetch forms to apply  Bootstrap validation 
         const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
+        // Loop over and prevent submission
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
